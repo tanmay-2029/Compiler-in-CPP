@@ -1,0 +1,22 @@
+
+# Hydrogen example
+
+int a = 10
+int b = 20
+int total = a + b
+
+print(total)
+
+string message = "Hello, Hydrogen!"
+print(message)
+
+if total > 20:
+    print("Total is greater than 20")
+else:
+    print("Total is not greater than 20")
+
+int i = 0
+
+while i < 3:
+    print(i)
+    i = i + 1
