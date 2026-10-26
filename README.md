@@ -139,7 +139,7 @@ while (i < 3) {
 }
 ```
 
-## Error messages
+## Error message
 
 Errors go to the terminal in this format:
 
