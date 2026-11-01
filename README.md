@@ -25,7 +25,7 @@ If there is any error, it prints the line number and the message and stops.
 | Print | `print(x)` |
 | If / else | `if x > 3:` ... `else:` |
 | While loop | `while i < 3:` |
-| Operators | `+ - * %` and `== != <= >= < >` |
+| Operators | `+ - * / %` and `== != <= >= < >` |
 | Comments | a line starting with `#` |
 | Blocks | indent by **4 spaces** (instead of `{ }`) |
 
@@ -53,6 +53,17 @@ int i = 0
 while i < 3:
     print(i)
     i = i + 1
+```
+
+### Division
+
+The `/` operator works on `int` and `float` values, like the other arithmetic operators.
+The compiler treats the result of a division as a `float`, so it can be stored in a `float` variable but not in an `int` variable.
+
+```
+int a = 10
+float b = a / 4
+print(b)
 ```
 
 ## How to run it
@@ -154,6 +165,8 @@ Some errors it catches:
 | using a variable that was never declared | `cannot infer expression type: b` |
 | declaring the same name twice | `variable already declared: a` |
 | `int f = 3.5` | `cannot assign float to int` |
+| `int d = 10 / 2` (division gives a float) | `cannot assign float to int` |
+| `"a" / 2` (non-number operands) | `incompatible arithmetic operands` |
 | `if` / `while` line without `:` | `expected ':' after if condition` |
 | condition that is not true/false | `if condition must be boolean` |
 | no indented block after `if`/`while` | `expected an indented block` |
@@ -163,7 +176,8 @@ Some errors it catches:
 
 ## Limitations (things not done yet)
 
-- Division `/` is not supported yet.
+- Dividing two `int` values uses C++ integer division in the generated code, so `10 / 4` gives `2` even though Hydrogen types the result as `float`.
+- Division by zero is not checked by the compiler.
 - Brackets inside expressions like `(a + 2) * 3` do not work.
 - Only whole-line comments (`# ...`), not comments at the end of a line.
 - No `elif`, `for`, functions, `and`/`or`/`not`, or input.
