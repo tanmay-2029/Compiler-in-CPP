@@ -163,7 +163,9 @@ int findArithmeticOperator(const string& s){
         if(c=='(') depth++;
         if(c==')') depth--;
 
-        bool isOperator = (c=='+' || c=='-' || c=='*' || c=='%');
+        // NEW: '/' (divide) added to the list of arithmetic operators, so the
+        // scanner now recognises it and infer() can type-check expressions like a / b
+        bool isOperator = (c=='+' || c=='-' || c=='*' || c=='/' || c=='%');
 
         // i>0 so that a minus at the very start is not used as an operator
         // it would be unary minus, like -5, not a binary operator
