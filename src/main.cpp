@@ -2,9 +2,9 @@
 // It reads a .hyd file and prints the same program written in C++.
 //
 // How to use:
-//   g++ -std=c++17 hydrogen_simple.cpp -o hydrogen
-//   ./hydrogen program.hyd > program.cpp
-//   g++ program.cpp -o program && ./program
+//   g++ -std=c++17 main.cpp -o hydrogen
+//   ./hydrogen test.hyd > test.cpp
+//   g++ test.cpp -o test && ./test
 //
 // Kinds of tokens in Hydrogen:
 //   KEYWORDS      : if, else, while, print
