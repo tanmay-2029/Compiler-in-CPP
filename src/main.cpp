@@ -6,6 +6,9 @@
 //   ./hydrogen test.hyd > test.cpp
 //   g++ test.cpp -o test && ./test
 //
+// Or One line command 
+//   g++ -std=c++17 main.cpp -o hydrogen && ./hydrogen test.hyd > test.cpp && g++ test.cpp -o test && ./test
+//
 // Kinds of tokens in Hydrogen:
 //   KEYWORDS      : if, else, while, print
 //   TYPE KEYWORDS : int, float, string, bool
